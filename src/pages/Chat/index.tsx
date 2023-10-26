@@ -138,7 +138,7 @@ const ChatComponent: React.FC = () => {
     if (!activeConversationId) {
       try {
         const newConversation = await conversationServices.createConversation({
-          topic: text,
+          topic: text.slice(0, 50),
           userId
         });
         currentConversationId = newConversation.id;
