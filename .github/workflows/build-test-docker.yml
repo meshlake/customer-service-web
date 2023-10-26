@@ -29,7 +29,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: harbor.dev.meshlake.com:8443/meshlake/smart-mail-web
+          images: harbor.dev.meshlake.com:8443/meshlake/customer-service-web
           tags: |
             type=raw,value=test
             type=ref,event=tag
