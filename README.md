@@ -1,62 +1,44 @@
-# 电商客服系统后台
+# 电商智能客服演示前端
 
-This project is initialized with [Ant Design Pro](https://pro.ant.design). Follow is the quick guide for how to use.
+> 本项目为电商智能客服演示项目的前端
 
-## Prerequisites
+- 测试环境：[https://smart-mail-test.meshlake.com/](https://smart-mail-test.meshlake.com/)，账户 `admin`，密码 `admin@2023`
+- 正式环境：暂未上线
+
+## 环境要求
 
 - [Node.js](https://nodejs.org/en/) (>=16.14.0)
 - [pnpm](https://pnpm.io/) (>=6.14.0)
 
-## Environment Prepare
-
-Install `node_modules`:
+## 开发
 
 ```bash
+# 安装依赖
 pnpm install
-```
 
-or
-
-```bash
-yarn
-```
-
-## Provided Scripts
-
-Ant Design Pro provides some useful script to help you quick start and build with web project, code style check and test.
-
-Scripts provided in `package.json`. It's safe to modify or add additional script:
-
-### Start project
-
-```bash
+# 启动开发服务
 npm start
-```
 
-### Build project
-
-```bash
+# 编译打包
 npm run build
 ```
 
-### Check code style
+## 部署
 
+### 测试环境部署
+
+- 镜像打包，代码变更提交至 test 分支，github action 自动打包镜像
+
+- k8s 更新镜像，重启服务
 ```bash
-npm run lint
+kubectl replace --force -f deploy/test.yaml
 ```
 
-You can also use script to auto fix some lint error:
+### 正式环境部署
 
+- 镜像打包，git 标签提交至 github ，github action 自动打包对应版本的镜像
+
+- k8s 更新镜像，重启服务
 ```bash
-npm run lint:fix
+kubectl replace --force -f deploy/work.yaml
 ```
-
-### Test code
-
-```bash
-npm test
-```
-
-## More
-
-You can view full document on our [official website](https://pro.ant.design). And welcome any feedback in our [github](https://github.com/ant-design/ant-design-pro).
