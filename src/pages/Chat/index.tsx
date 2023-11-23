@@ -81,7 +81,6 @@ const ChatComponent: React.FC = () => {
         const firstItem = list[0];
         if (firstItem) {
           setActiveConversationId(firstItem.id);
-          // setBotId(firstItem.bot_id + '');
           getChatHistory(firstItem.id);
         }
       }
@@ -99,16 +98,13 @@ const ChatComponent: React.FC = () => {
       return;
     }
     setActiveConversationId(conversation.id);
-    // setBotId(conversation.bot_id + '');
     resetList();
     getChatHistory(conversation.id);
   };
 
   const handleAddConversation = () => {
-    // setBotId(undefined);
     setActiveConversationId(undefined);
     resetList();
-    // chatbotForm.setFieldsValue({ chatbotId: undefined });
   };
 
   const handleDeleteConversation = (id: string) => {
@@ -142,7 +138,7 @@ const ChatComponent: React.FC = () => {
     if (!activeConversationId) {
       try {
         const newConversation = await conversationServices.createConversation({
-          topic: text,
+          topic: text.slice(0, 50),
           userId
         });
         currentConversationId = newConversation.id;
