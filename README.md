@@ -2,7 +2,7 @@
 
 > 本项目为电商智能客服演示项目的前端
 
-- 测试环境：[https://smart-mail-test.meshlake.com/](https://smart-mail-test.meshlake.com/)，账户 `admin`，密码 `admin@2023`
+- 测试环境：[https://customer-service-test.meshlake.com/](https://customer-service-test.meshlake.com/)，账户 `admin`，密码 `admin@2023`
 - 正式环境：暂未上线
 
 ## 环境要求
